@@ -1,0 +1,248 @@
+[
+  {
+    "id": "granite-landscaping-products",
+    "name": "Granite Landscaping Products",
+    "types": [
+      {
+        "id": "patterns",
+        "name": "Patterns",
+        "image": "/images/patterns.jpg",
+        "description": "Natural granite patterns with unique textures and colors",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/patterns/blue-mist.jpg",
+            "description": "Patterns made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/patterns/royal-gray.jpg",
+            "description": "Patterns featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "platforms",
+        "name": "Platforms",
+        "image": "/images/platforms.jpg",
+        "description": "Durable granite platforms for various applications",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/platforms/blue-mist.jpg",
+            "description": "Platforms made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/platforms/royal-gray.jpg",
+            "description": "Platforms featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "slabs",
+        "name": "Slabs",
+        "image": "/images/slabs.jpg",
+        "description": "Granite slabs for countertops, flooring, and large surfaces",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/slabs/blue-mist.jpg",
+            "description": "Slabs made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/slabs/royal-gray.jpg",
+            "description": "Slabs featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "steps",
+        "name": "Steps",
+        "image": "/images/steps.jpg",
+        "description": "Custom granite steps for landscaping projects",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/steps/blue-mist.jpg",
+            "description": "Steps made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/steps/royal-gray.jpg",
+            "description": "Steps featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "treads",
+        "name": "Treads",
+        "image": "/images/treads.jpg",
+        "description": "Precision-cut granite treads for stairs and terraces",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/treads/blue-mist.jpg",
+            "description": "Treads made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/treads/royal-gray.jpg",
+            "description": "Treads featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "pillar-caps",
+        "name": "Pillar Caps",
+        "image": "/images/pillar-caps.jpg",
+        "description": "Stylish granite caps for fencing and gate pillars",
+        "varieties": [
+          {
+            "id": "blue-mist",
+            "name": "Blue Mist",
+            "image": "/images/pillar-caps/blue-mist.jpg",
+            "description": "Pillar caps made from rich blue granite with golden speckles, perfect for premium applications.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          },
+          {
+            "id": "royal-gray",
+            "name": "Royal Gray",
+            "image": "/images/pillar-caps/royal-gray.jpg",
+            "description": "Pillar caps featuring gray granite with a mirror-like finish, ideal for modern designs.",
+            "details": {
+              "sizeOptions": [
+                { "size": "12x12x1.25", "weightPerPiece": "1 lbs", "piecesPerCrate": 160, "price": 2.46, "stock": 10 },
+                { "size": "12x18x1.25", "weightPerPiece": "1.5 lbs", "piecesPerCrate": 100, "price": 2.46, "stock": 10 }
+              ],
+              "purchaseOptions": [
+                { "type": "crate", "desc": "66 pieces - Recommended" },
+                { "type": "piece", "desc": "Buy by Piece" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

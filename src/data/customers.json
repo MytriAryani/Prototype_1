@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "client1",
+    "email": "client1@company.com",
+    "phone": "9998887777",
+    "password": "pass123"
+  },
+  {
+    "id": 2,
+    "username": "client2",
+    "email": "client2@company.com",
+    "phone": "8887776666",
+    "password": "password"
+  }
+]
