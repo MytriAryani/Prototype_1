@@ -1,8 +1,30 @@
 import { useState } from "react";
+import { useCart } from "../../context/CartContext";
 
-export default function PurchaseOptions({ purchaseOptions }) {
+export default function PurchaseOptions({ purchaseOptions, product }) {
+  const { addToCart } = useCart();
   const [selected, setSelected] = useState(purchaseOptions[0].type);
   const [qty, setQty] = useState(1);
+
+  function handleAddToCart() {
+    const selectedOption = purchaseOptions.find(opt => opt.type === selected);
+    if (!selectedOption) return;
+
+    const item = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      selectedSizeId: selectedOption.sizeId,
+      size: selectedOption.sizeLabel,
+      weightPerPiece: selectedOption.weightPerPiece,
+      piecesPerCrate: selectedOption.piecesPerCrate,
+      pricePerPiece: selectedOption.pricePerPiece,
+      crateQty: qty,
+      pieceQty: 0 // You can later allow pieceQty selection if needed
+    };
+
+    addToCart(item);
+  }
 
   return (
     <div className="mt-6">
@@ -28,7 +50,12 @@ export default function PurchaseOptions({ purchaseOptions }) {
         <span>{qty}</span>
         <button type="button" className="border px-2" onClick={() => setQty(q => q + 1)}>+</button>
       </div>
-      <button className="mt-5 w-full bg-black text-white rounded py-3 font-semibold">Add to Cart</button>
+      <button
+        onClick={handleAddToCart}
+        className="mt-5 w-full bg-black text-white rounded py-3 font-semibold"
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }

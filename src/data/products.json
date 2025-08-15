@@ -6,13 +6,13 @@
       {
         "id": "patterns",
         "name": "Patterns",
-        "image": "/images/patterns.jpg",
+        "image": "/patterns.png",
         "description": "Natural granite patterns with unique textures and colors",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/patterns/blue-mist.jpg",
+            "image": "/patterns-blue-mist.png",
             "description": "Patterns made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -28,7 +28,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/patterns/royal-gray.jpg",
+            "image": "/patterns-royal-grey.png",
             "description": "Patterns featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [
@@ -46,13 +46,13 @@
       {
         "id": "platforms",
         "name": "Platforms",
-        "image": "/images/platforms.jpg",
+        "image": "/platforms.png",
         "description": "Durable granite platforms for various applications",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/platforms/blue-mist.jpg",
+            "image": "/platforms-blue-mist.png",
             "description": "Platforms made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -68,7 +68,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/platforms/royal-gray.jpg",
+            "image": "/platforms.png",
             "description": "Platforms featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [
@@ -86,13 +86,13 @@
       {
         "id": "slabs",
         "name": "Slabs",
-        "image": "/images/slabs.jpg",
+        "image": "/slabs-blue-mist.png",
         "description": "Granite slabs for countertops, flooring, and large surfaces",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/slabs/blue-mist.jpg",
+            "image": "/slabs-blue-mist.png",
             "description": "Slabs made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -108,7 +108,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/slabs/royal-gray.jpg",
+            "image": "/slabs-royal-grey.png",
             "description": "Slabs featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [
@@ -126,13 +126,13 @@
       {
         "id": "steps",
         "name": "Steps",
-        "image": "/images/steps.jpg",
+        "image": "/steps-royal-grey.png",
         "description": "Custom granite steps for landscaping projects",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/steps/blue-mist.jpg",
+            "image": "/steps-blue-mist.png",
             "description": "Steps made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -148,7 +148,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/steps/royal-gray.jpg",
+            "image": "/steps-royal-grey.png",
             "description": "Steps featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [
@@ -166,13 +166,13 @@
       {
         "id": "treads",
         "name": "Treads",
-        "image": "/images/treads.jpg",
+        "image": "/threads-blue-mist.png",
         "description": "Precision-cut granite treads for stairs and terraces",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/treads/blue-mist.jpg",
+            "image": "/threads-blue-mist.png",
             "description": "Treads made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -188,7 +188,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/treads/royal-gray.jpg",
+            "image": "/threads-royal-grey.png",
             "description": "Treads featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [
@@ -206,13 +206,13 @@
       {
         "id": "pillar-caps",
         "name": "Pillar Caps",
-        "image": "/images/pillar-caps.jpg",
+        "image": "/pillar-royal-grey.png",
         "description": "Stylish granite caps for fencing and gate pillars",
         "varieties": [
           {
             "id": "blue-mist",
             "name": "Blue Mist",
-            "image": "/images/pillar-caps/blue-mist.jpg",
+            "image": "/pillar-blue-mist.png",
             "description": "Pillar caps made from rich blue granite with golden speckles, perfect for premium applications.",
             "details": {
               "sizeOptions": [
@@ -228,7 +228,7 @@
           {
             "id": "royal-gray",
             "name": "Royal Gray",
-            "image": "/images/pillar-caps/royal-gray.jpg",
+            "image": "/pillar-royal-grey.png",
             "description": "Pillar caps featuring gray granite with a mirror-like finish, ideal for modern designs.",
             "details": {
               "sizeOptions": [

@@ -5,35 +5,35 @@ const products = [
     id: 1,
     name: "Granite Landscape",
     slug: "granite-landscaping-products",
-    image: "/images/granite-landscape.jpg",
+    image: "granite-landscaping-products.png",
     description: "Granite solutions for landscapes and architecture."
   },
   {
     id: 2,
     name: "Marble Tiles",
     slug: "marble-tiles",
-    image: "/images/marble-tiles.jpg",
+    image: "marble-tiles.png",
     description: "Premium quality marble for floors and walls."
   },
   {
     id: 3,
     name: "Quartz Surfaces",
     slug: "quartz-surfaces",
-    image: "/images/quartz-surfaces.jpg",
+    image: "quartz-surfaces.png",
     description: "Engineered quartz for modern living."
   },
   {
     id: 4,
     name: "Indoor Stone Cladding",
     slug: "indoor-stone-cladding",
-    image: "/images/indoor-cladding.jpg",
+    image: "indoor-cladding.png",
     description: "Elegant indoor wall solutions in natural stone."
   },
   {
     id: 5,
     name: "Outdoor Paving Stones",
     slug: "outdoor-paving-stones",
-    image: "/images/outdoor-paving.jpg",
+    image: "outdoor-paving.png",
     description: "Durable outdoor paving options that last."
   },
 ];
