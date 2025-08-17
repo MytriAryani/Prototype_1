@@ -9,15 +9,17 @@ const FILLER_CHARGE = 30;
 const SHIPPING_FEE = 120;
 const MAX_WEIGHT = 48000;
 
-export default function Cart() {
+export default function Cart({ user, onLogout }) {
   const { cartItems } = useCart();
   const [showConfirm, setShowConfirm] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const navigate = useNavigate();
 
-  const userTier = customers[0].tier;
+  // ✅ Only calculate tier if logged in
+  const userTier = user ? customers[0].tier : null;
 
   const discountRate = useMemo(() => {
+    if (!userTier) return 0;
     if (userTier === "Tier1") return 0.2;
     if (userTier === "Tier2") return 0.15;
     if (userTier === "Tier3") return 0.1;
@@ -31,15 +33,11 @@ export default function Cart() {
     }, 0);
   }, [cartItems]);
 
-  const totalPieces = useMemo(() => {
-    return cartItems.reduce((sum, item) => {
-      return sum + item.crateQty * item.piecesPerCrate + item.pieceQty;
-    }, 0);
-  }, [cartItems]);
+  
 
   const totalWeight = useMemo(() => {
     return cartItems.reduce((sum, item) => {
-      const weightNum = parseFloat(item.weightPerPiece); // ✅ FIX
+      const weightNum = parseFloat(item.weightPerPiece);
       const pieces = item.crateQty * item.piecesPerCrate + item.pieceQty;
       return sum + pieces * weightNum;
     }, 0);
@@ -47,8 +45,16 @@ export default function Cart() {
 
   const discount = subtotal * discountRate;
 
-  const hasLeftoverPieces = totalPieces % (cartItems[0]?.piecesPerCrate || 1) !== 0;
-  const fillerCharge = hasLeftoverPieces ? FILLER_CHARGE : 0;
+ const fillerCharge = useMemo(() => {
+  return cartItems.reduce((sum, item) => {
+    const pieces = item.crateQty * item.piecesPerCrate + item.pieceQty;
+    if (pieces > 0 && pieces % item.piecesPerCrate !== 0) {
+      return sum + FILLER_CHARGE;
+    }
+    return sum;
+  }, 0);
+}, [cartItems]);
+
   const shippingFee = totalWeight > MAX_WEIGHT ? 0 : SHIPPING_FEE;
 
   const finalTotal = subtotal - discount + fillerCharge + shippingFee;
@@ -68,27 +74,45 @@ export default function Cart() {
 
   const handleConfirm = () => {
     setShowConfirm(false);
-    navigate("/checkout", { 
-      state: { 
-        totalWeight, 
-        finalTotal, 
-        pickupOnly: totalWeight > MAX_WEIGHT 
-      } 
-    }); // ✅ FIX
+    navigate("/checkout", {
+      state: {
+        totalWeight,
+        finalTotal,
+        pickupOnly: totalWeight > MAX_WEIGHT,
+      },
+    });
   };
 
-  if (!cartItems.length) {
+  // ✅ If no user logged in, always show empty cart
+  if (!user) {
     return (
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold">Cart</h1>
-        <p>Your cart is empty.</p>
+      <div>
+        <Navbar user={user} onLogout={onLogout} />
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <h1 className="text-2xl font-bold">Cart</h1>
+          <p>Your cart is empty. Please log in to see your items.</p>
+        </div>
       </div>
     );
   }
 
+  // ✅ If logged in but no items
+  if (!cartItems.length) {
+    return (
+      <div>
+        <Navbar user={user} onLogout={onLogout} />
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          <h1 className="text-2xl font-bold">Cart</h1>
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ✅ Logged in + has items
   return (
     <div>
-      <Navbar />
+      <Navbar user={user} onLogout={onLogout} />
       <div className="max-w-6xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-4">Cart</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

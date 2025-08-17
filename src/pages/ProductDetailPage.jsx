@@ -1,24 +1,26 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import productsData from "../data/products.json";
 import NavBar from "../components/Navbar";
 import { useState, useMemo } from "react";
 import { useCart } from "../context/CartContext"; // ✅ use cart
 
-export default function ProductDetailPage() {
+export default function ProductDetailPage({ user, onLogout }) {
   const { categoryId, typeId, varietyId } = useParams();
   const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // ✅ Safe product lookups
   const productCategory = useMemo(
-    () => productsData.find(c => c.id === categoryId),
+    () => productsData.find((c) => c.id === categoryId),
     [categoryId]
   );
   const productType = useMemo(
-    () => productCategory?.types?.find(t => t.id === typeId),
+    () => productCategory?.types?.find((t) => t.id === typeId),
     [productCategory, typeId]
   );
   const variety = useMemo(
-    () => productType?.varieties?.find(v => v.id === varietyId),
+    () => productType?.varieties?.find((v) => v.id === varietyId),
     [productType, varietyId]
   );
 
@@ -32,6 +34,7 @@ export default function ProductDetailPage() {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showSizeError, setShowSizeError] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false); // ✅ New
 
   // ✅ Handle "product not found" gracefully
   if (!productCategory || !productType || !variety) {
@@ -48,23 +51,28 @@ export default function ProductDetailPage() {
 
   const actuallyAddToCart = () => {
     addToCart({
-    id: variety.id,
-    name: variety.name,
-    image: selectedImage,
-    selectedSizeId: selectedSize.size,
-    crateQty,
-    pieceQty,
-    pricePerPiece: selectedSize.price,
-    piecesPerCrate: selectedSize.piecesPerCrate,
-    weightPerPiece: selectedSize.weightPerPiece,
-    size: selectedSize.size,
-  });
+      id: variety.id,
+      name: variety.name,
+      image: selectedImage,
+      selectedSizeId: selectedSize.size,
+      crateQty,
+      pieceQty,
+      pricePerPiece: selectedSize.price,
+      piecesPerCrate: selectedSize.piecesPerCrate,
+      weightPerPiece: selectedSize.weightPerPiece,
+      size: selectedSize.size,
+    });
 
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
 
   const handleAddToCart = () => {
+    if (!user) {
+      setShowLoginModal(true); // ✅ Ask to log in
+      return;
+    }
+
     if (!selectedSize) {
       setShowSizeError(true);
       return;
@@ -81,7 +89,7 @@ export default function ProductDetailPage() {
 
   return (
     <div className="bg-white min-h-screen relative">
-      <NavBar />
+      <NavBar user={user} onLogout={onLogout} />
 
       {/* Floating dismissible warning */}
       {showWarning && (
@@ -169,9 +177,7 @@ export default function ProductDetailPage() {
                 <span className="font-medium">Buy by Crate</span>
                 <div className="flex items-center gap-2 mt-1">
                   <button
-                    onClick={() =>
-                      setCrateQty(Math.max(crateQty - 1, 0))
-                    }
+                    onClick={() => setCrateQty(Math.max(crateQty - 1, 0))}
                     className="px-2 border rounded"
                   >
                     -
@@ -198,9 +204,7 @@ export default function ProductDetailPage() {
                 <span className="font-medium">Buy by Piece</span>
                 <div className="flex items-center gap-2 mt-1">
                   <button
-                    onClick={() =>
-                      setPieceQty(Math.max(pieceQty - 1, 0))
-                    }
+                    onClick={() => setPieceQty(Math.max(pieceQty - 1, 0))}
                     className="px-2 border rounded"
                   >
                     -
@@ -272,6 +276,37 @@ export default function ProductDetailPage() {
                 className="px-4 py-2 bg-black text-white rounded hover:bg-gray-900"
               >
                 Proceed Anyway
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Login Required Modal */}
+      {showLoginModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+            <h2 className="text-lg font-semibold mb-4">Login Required</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              You must log in to add items to your cart.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => setShowLoginModal(false)}
+                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setShowLoginModal(false);
+                  navigate("/login", {
+                    state: { from: location.pathname }, // ✅ Save current page
+                  });
+                }}
+                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-900"
+              >
+                Login
               </button>
             </div>
           </div>

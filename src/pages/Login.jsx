@@ -9,7 +9,9 @@ export default function Login({ onLogin }) {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const from = (location.state && location.state.from) || "/";
+
+  // ✅ Correct way: get `pathname` if redirected from another page
+  const from = location.state?.from?.pathname || "/";
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,16 +20,21 @@ export default function Login({ onLogin }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const user = customers.find(
       (u) =>
         u.username === form.identifier ||
         u.email === form.identifier ||
         u.phone === form.identifier
     );
+
     if (user && user.password === form.password) {
       onLogin(user);
-      navigate(from, { replace: true });
+      console.log("✅ Login successful:", user);
+      console.log("➡️ Redirecting back to:", from);
+      navigate(from, { replace: true }); // 🔥 Go back to page before login
     } else {
+      console.log("❌ Invalid credentials for:", form.identifier);
       setError("Invalid credentials");
     }
   }
@@ -44,6 +51,7 @@ export default function Login({ onLogin }) {
       >
         <span className="text-2xl text-black">&#8592;</span>
       </button>
+
       {/* Login Form */}
       <form
         className="flex flex-col items-center justify-center w-full px-4"
@@ -51,6 +59,7 @@ export default function Login({ onLogin }) {
         onSubmit={handleSubmit}
       >
         <h1 className="text-black font-bold text-3xl mb-8 text-center">Login</h1>
+
         <input
           type="text"
           name="identifier"
@@ -60,6 +69,7 @@ export default function Login({ onLogin }) {
           className="w-full h-12 px-4 mb-4 rounded border border-black focus:border-black focus:outline-none transition placeholder:text-gray-400"
           autoComplete="username"
         />
+
         <div className="relative w-full mb-2">
           <input
             type={showPwd ? "text" : "password"}
@@ -78,6 +88,7 @@ export default function Login({ onLogin }) {
             {showPwd ? <IoMdEyeOff /> : <IoMdEye />}
           </span>
         </div>
+
         <div className="w-full flex justify-center mt-0.5 mb-5">
           <span className="text-xs text-gray-400 text-center">
             Forgotten your login details?{" "}
@@ -86,12 +97,14 @@ export default function Login({ onLogin }) {
             </a>
           </span>
         </div>
+
         <button
           type="submit"
           className="w-full max-w-xs h-12 bg-black text-white font-medium rounded transition hover:bg-gray-800"
         >
           Login
         </button>
+
         {error && <div className="text-red-500 text-xs mt-3">{error}</div>}
       </form>
     </div>

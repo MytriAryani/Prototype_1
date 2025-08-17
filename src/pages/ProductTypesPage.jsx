@@ -3,7 +3,7 @@ import productsData from "../data/products.json";
 import TypesGrid from "../components/productsType/TypesGrid";
 import NavBar from "../components/Navbar"
 
-export default function ProductTypesPage() {
+export default function ProductTypesPage({ user, onLogout }) {
   const { slug } = useParams(); // category slug from URL
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export default function ProductTypesPage() {
   return (
     
     <section>
-      <NavBar/>
+      <NavBar  user={user} onLogout={onLogout} />
       <main className="max-w-6xl mx-auto px-4 py-8">
       
         <h1 className="text-3xl font-bold mb-3">{productCategory.name}</h1>

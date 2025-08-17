@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import ProductTypesPage from "./pages/ProductTypesPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import VarietiesPage from "./pages/VarietiesPage";
-import Cart from "./pages/Cart"; // ✅ Import your Cart page
+import Cart from "./pages/Cart";
 import CheckoutPage from "./pages/Checkout";
 import Invoice from "./pages/Invoice";
 
@@ -32,22 +32,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home user={user} onLogout={handleLogout} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        
-        {/* Granite Landscaping Products types */}
-        <Route path="/products/:slug" element={<ProductTypesPage />} />
 
-        {/* Patterns Varieties */}
-        <Route path="/products/:categoryId/:typeId" element={<VarietiesPage />} />
+        <Route path="/products/:slug" element={<ProductTypesPage user={user} onLogout={handleLogout} />} />
+        <Route path="/products/:categoryId/:typeId" element={<VarietiesPage user={user} onLogout={handleLogout} />} />
+        <Route path="/products/:categoryId/:typeId/:varietyId" element={<ProductDetailPage user={user} onLogout={handleLogout} />} />
 
-        {/* Product Detail Page */}
-        <Route
-          path="/products/:categoryId/:typeId/:varietyId"
-          element={<ProductDetailPage />}
-        />
-        <Route path="/checkout" element={<CheckoutPage/>} />
-        {/* ✅ Cart page route */}
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/invoice" element={<Invoice />} />
+        <Route path="/checkout" element={<CheckoutPage user={user} onLogout={handleLogout} />} />
+        <Route path="/cart" element={<Cart user={user} onLogout={handleLogout} />} />
+        <Route path="/invoice" element={<Invoice user={user} onLogout={handleLogout} />} />
       </Routes>
     </Router>
   );

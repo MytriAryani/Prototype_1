@@ -92,8 +92,15 @@ export default function Invoice() {
     );
   });
 
-  const hasLeftoverPieces = totalPieces % (cartItems[0]?.piecesPerCrate || 1) !== 0;
-  const fillerCharge = hasLeftoverPieces ? FILLER_CHARGE : 0;
+  let fillerCharge = 0;
+cartItemsWithPrice.forEach((item) => {
+  const pieces = (item.crateQty || 0) * (item.piecesPerCrate || 0) + (item.pieceQty || 0);
+  if (pieces > 0 && pieces % item.piecesPerCrate !== 0) {
+    fillerCharge += FILLER_CHARGE;
+  }
+});
+
+
   const shippingFee = totalWeight > MAX_WEIGHT ? 0 : SHIPPING_FEE;
 
   const finalTotal = subtotal - discount + fillerCharge + shippingFee;
@@ -123,7 +130,7 @@ export default function Invoice() {
 
   return (
     <>
-      <Navbar />
+      
       <div
         ref={invoiceRef}
         style={{ backgroundColor: "#ffffff", color: "#111827", padding: "24px" }}

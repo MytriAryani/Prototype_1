@@ -2,8 +2,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import productsData from "../data/products.json";
 import VarietiesGrid from "../components/varieties/VarietiesGrid";
 import NAVBAR from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
-export default function VarietiesPage() {
+export default function VarietiesPage({ user, onLogout }) {
   const { categoryId, typeId } = useParams();
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ export default function VarietiesPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* NAVBAR */}
-      <NAVBAR />
+      <Navbar  user={user} onLogout={onLogout}  />
 
       {/* Content wrapper */}
       <main className="max-w-7xl mx-auto px-4 py-10">
